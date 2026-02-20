@@ -79,10 +79,10 @@ import './App.css';
 
 function App() {
   return (
-    <ThemeProvider>
-      <AuthProvider>
-        <FinanceProvider>
-          <Router>
+    <Router>
+      <ThemeProvider>
+        <AuthProvider>
+          <FinanceProvider>
             <ToastContainer 
               position="top-right"
               autoClose={3000}
@@ -115,10 +115,10 @@ function App() {
               
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
-          </Router>
-        </FinanceProvider>
-      </AuthProvider>
-    </ThemeProvider>
+          </FinanceProvider>
+        </AuthProvider>
+      </ThemeProvider>
+    </Router>
   );
 }
 
