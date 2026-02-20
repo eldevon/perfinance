@@ -6,6 +6,8 @@ import {
   FiPieChart, 
   FiBarChart2, 
   FiSettings,
+  FiTarget,
+  FiRepeat,
   FiMenu,
   FiX 
 } from 'react-icons/fi';
@@ -18,6 +20,8 @@ const Sidebar = () => {
     { path: '/', icon: <FiHome />, label: 'Dashboard' },
     { path: '/transactions', icon: <FiCreditCard />, label: 'Transactions' },
     { path: '/budget', icon: <FiPieChart />, label: 'Budget' },
+    { path: '/goals', icon: <FiTarget />, label: 'Goals' },
+    { path: '/recurring', icon: <FiRepeat />, label: 'Recurring' },
     { path: '/reports', icon: <FiBarChart2 />, label: 'Reports' },
     { path: '/settings', icon: <FiSettings />, label: 'Settings' },
   ];
@@ -48,9 +52,24 @@ const Sidebar = () => {
           </ul>
         </nav>
         
+        <div className="sidebar-section">
+          <div className="sidebar-section-title">Quick Actions</div>
+          <div className="quick-actions">
+            <button className="quick-action-btn">
+              Add Transaction
+            </button>
+            <button className="quick-action-btn">
+              View Reports
+            </button>
+            <button className="quick-action-btn">
+              Set Budget
+            </button>
+          </div>
+        </div>
+        
         <div className="sidebar-footer">
           <p>© 2024 Finance Tracker</p>
-          <p className="version">v1.0.0</p>
+          <p className="version">v2.0.0</p>
         </div>
       </aside>
       

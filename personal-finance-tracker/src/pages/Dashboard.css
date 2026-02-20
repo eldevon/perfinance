@@ -29,7 +29,7 @@
 
 .stats-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
@@ -70,6 +70,11 @@
   color: #1e40af;
 }
 
+.stat-icon.goal {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #92400e;
+}
+
 .stat-info h4 {
   margin: 0 0 0.25rem 0;
   font-size: 0.95rem;
@@ -97,18 +102,129 @@
   gap: 2rem;
 }
 
-.chart-section {
-  height: 100%;
-}
-
-.form-section {
-  height: 100%;
+.middle-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
 .bottom-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+}
+
+.chart-section,
+.form-section,
+.goals-section,
+.recurring-section,
+.budgets-section,
+.transactions-section {
+  height: 100%;
+}
+
+.goal-count,
+.recurring-count,
+.budget-count {
+  background: #3b82f6;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.recurring-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.recurring-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.recurring-stat {
+  text-align: center;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.recurring-stat .stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.recurring-stat .stat-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.recurring-list-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recurring-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.recurring-item:hover {
+  background: #f3f4f6;
+  transform: translateX(2px);
+}
+
+.recurring-desc {
+  font-weight: 500;
+  color: #1f2937;
+  font-size: 0.9rem;
+}
+
+.recurring-amount {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.recurring-amount.income {
+  color: #10b981;
+}
+
+.recurring-amount.expense {
+  color: #ef4444;
+}
+
+.empty-recurring {
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.empty-recurring svg {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-recurring p {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 .budgets-grid {
@@ -118,15 +234,6 @@
   max-height: 400px;
   overflow-y: auto;
   padding-right: 0.5rem;
-}
-
-.budget-count {
-  background: #3b82f6;
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
 }
 
 .empty-budgets,
@@ -218,10 +325,12 @@
 }
 
 @media (max-width: 1200px) {
-  .main-content-row {
-    grid-template-columns: 1fr;
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
   }
   
+  .main-content-row,
+  .middle-row,
   .bottom-row {
     grid-template-columns: 1fr;
   }
@@ -258,5 +367,9 @@
   
   .recent-transactions {
     max-height: none;
+  }
+  
+  .recurring-stats {
+    grid-template-columns: 1fr;
   }
 }
