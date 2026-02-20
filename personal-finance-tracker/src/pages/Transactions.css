@@ -1,0 +1,62 @@
+.transactions-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.page-header {
+  margin-bottom: 1rem;
+}
+
+.page-header h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.page-header p {
+  margin: 0.5rem 0 0 0;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.transactions-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.transactions-form {
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .transactions-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .transactions-form {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .transactions-content {
+    gap: 1rem;
+  }
+}
